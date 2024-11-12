@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://btjmdvwrfypv7"]
+
+[ext_resource type="Texture2D" uid="uid://dvucpav64f1q7" path="res://assets/images/lore/5.png" id="2_axtdb"]
+[ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="3_cds0e"]
+
+[sub_resource type="Theme" id="Theme_fvphs"]
+
+[sub_resource type="GDScript" id="GDScript_t5ji3"]
+script/source = "extends Button
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
+
+[node name="Message" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.000463082
+theme = SubResource("Theme_fvphs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(561.832, 362.26)
+scale = Vector2(0.57611, 0.647135)
+texture = ExtResource("2_axtdb")
+region_rect = Rect2(135, 104, 1654, 872)
+
+[node name="Button" type="Button" parent="Sprite2D"]
+offset_left = 699.747
+offset_top = -425.406
+offset_right = 734.747
+offset_bottom = -386.406
+scale = Vector2(2, 2)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_cds0e")
+text = "X"
+flat = true
+icon_alignment = 1
+script = SubResource("GDScript_t5ji3")
+
+[connection signal="button_down" from="Sprite2D/Button" to="." method="_on_button_button_down"]

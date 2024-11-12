@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://15lvoapd3ndd"]
+
+[ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
+[ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_du806"]
+[ext_resource type="PackedScene" uid="uid://ck5ejh4qfohlp" path="res://scenes/bottle/bottle_new_world.tscn" id="5_1ddor"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
+size = Vector2(233.726, 231.91)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -912.0
+offset_top = -418.0
+offset_right = -872.0
+offset_bottom = -378.0
+scale = Vector2(38.2009, 21.19)
+
+[node name="boat" type="CharacterBody2D" parent="."]
+scale = Vector2(0.643837, 0.905501)
+script = ExtResource("1_xkc0s")
+
+[node name="boat_sprite" type="Sprite2D" parent="boat"]
+scale = Vector2(1.02092, 0.801607)
+texture = ExtResource("2_du806")
+
+[node name="Camera2D" type="Camera2D" parent="boat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="boat"]
+position = Vector2(-0.776595, 0.55218)
+rotation = -3.14159
+scale = Vector2(0.551564, -0.452392)
+shape = SubResource("RectangleShape2D_raihm")
+
+[node name="BottleNewWorld" parent="." instance=ExtResource("5_1ddor")]
+position = Vector2(473, -2)
+scale = Vector2(4.36583, 5.49195)
