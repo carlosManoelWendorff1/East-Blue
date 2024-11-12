@@ -1,3 +1,33 @@
-[gd_scene format=3 uid="uid://c3fflikjl8mq8"]
+[gd_scene load_steps=5 format=3 uid="uid://c3fflikjl8mq8"]
+
+[ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
+[ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_pqn25"]
+[ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
+size = Vector2(130, 129)
 
 [node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -44.0
+offset_top = 612.0
+offset_right = 1133.0
+offset_bottom = 652.0
+
+[node name="Fish" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(509, 1051)
+
+[node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
+position = Vector2(541, 422)
+script = ExtResource("1_fpicq")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("2_pqn25")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(2, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_5wwka")
