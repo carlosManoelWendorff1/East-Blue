@@ -1,5 +1,6 @@
-extends Control
+extends Node2D
 
+signal close_dialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -12,5 +13,6 @@ func _process(delta: float) -> void:
 
 
 func _on_button_button_down() -> void:
-	get_node("..").queue_free()
+	emit_signal("close_dialog")
+	$CanvasLayer.hide()
 	pass # Replace with function body.
