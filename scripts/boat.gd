@@ -4,6 +4,7 @@ extends CharacterBody2D
 var speed = 300.0
 const MAX_SPEED = 300.0
 var acceleration = 200.0
+var deceleration = 100.0  # Slower deceleration
 const JUMP_VELOCITY = -400.0
 
 # Define the set_speed signal
@@ -19,8 +20,8 @@ func _physics_process(delta: float) -> void:
 		# Accelerate towards the max speed
 		velocity.x = move_toward(velocity.x, direction * MAX_SPEED, acceleration * delta)
 	else:
-		# Decelerate to a stop
-		velocity.x = move_toward(velocity.x, 0, acceleration * delta)
+		# Decelerate more slowly when stopping
+		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
 	move_and_slide()
 
 func stop_player() -> void:
