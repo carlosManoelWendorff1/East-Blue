@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="East Blue"
-run/main_scene="res://scenes/node_2d.tscn"
+run/main_scene="res://scenes/boat.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
-config/icon="res://assets/icon.svg"
+config/icon="res://assets/images/icon.svg"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=720
 
 [dotnet]
 
