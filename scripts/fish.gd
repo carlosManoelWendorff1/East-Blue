@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 100.0
+const SPEED = 200.0
 var fish_speed = 200.0
 var caught = false
 
@@ -25,9 +25,10 @@ func _physics_process(delta: float) -> void:
 				
 			var coll = collision.get_collider()
 			
-			if coll.is_in_group("player"):
+			if coll.is_in_group("player") && not $"../Player".has_fish:
 				caught = true
 				velocity.x = 0.0;
+				$"../Player".has_fish = true
+				$"../Player".fish = self
 			elif coll.is_in_group("wall"):
 				fish_speed = -fish_speed
-				
