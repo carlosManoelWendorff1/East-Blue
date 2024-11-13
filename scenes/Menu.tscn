@@ -1,0 +1,102 @@
+[gd_scene load_steps=7 format=3 uid="uid://ck4mq02ywx3bh"]
+
+[ext_resource type="Texture2D" uid="uid://d0afm0n8dmaw2" path="res://assets/images/GUI.png" id="1_0plvx"]
+[ext_resource type="Theme" uid="uid://0w0htlpdksdc" path="res://themes/theme_button.tres" id="1_7fngm"]
+[ext_resource type="Script" path="res://scenes/menu.gd" id="1_25k53"]
+[ext_resource type="Texture2D" uid="uid://cub6jhsbk5li2" path="res://assets/images/backgrounds/far.png" id="3_aqx4t"]
+[ext_resource type="Texture2D" uid="uid://dqicefsed5lao" path="res://assets/images/backgrounds/foregound-merged.png" id="5_4cn0f"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nbbkf"]
+font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_25k53")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(256, 488)
+scale = Vector2(8.15306, 7.9183)
+texture = ExtResource("1_0plvx")
+region_enabled = true
+region_rect = Rect2(1.82954, 32.8835, 44.898, 45.767)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -308.0
+offset_top = -320.0
+offset_right = -156.0
+offset_bottom = -154.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Start Game" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7fngm")
+theme_type_variation = &"FlatButton"
+text = "Start Game
+"
+
+[node name="Credits" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7fngm")
+text = "Credits
+"
+flat = true
+
+[node name="Quit Game" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_7fngm")
+text = "Quit Game"
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 300.0
+grow_horizontal = 2
+theme = ExtResource("1_7fngm")
+text = "EAST BLUE
+"
+label_settings = SubResource("LabelSettings_nbbkf")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="back" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(576, 400)
+scale = Vector2(4.50642, 4.21057)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/back"]
+texture = ExtResource("3_aqx4t")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(576, 400)
+scale = Vector2(4.50642, 4.21057)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+texture = ExtResource("5_4cn0f")
+
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Start Game" to="." method="_on_start_game_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Credits" to="." method="_on_credits_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Quit Game" to="." method="_on_quit_game_button_down"]

@@ -1,0 +1,128 @@
+[gd_scene load_steps=7 format=3 uid="uid://c73jmgsd66jh"]
+
+[ext_resource type="Texture2D" uid="uid://d0afm0n8dmaw2" path="res://assets/images/GUI.png" id="1_hmb5f"]
+[ext_resource type="Script" path="res://scenes/credits.gd" id="1_la8la"]
+[ext_resource type="Theme" uid="uid://0w0htlpdksdc" path="res://themes/theme_button.tres" id="2_n2glt"]
+[ext_resource type="Texture2D" uid="uid://cub6jhsbk5li2" path="res://assets/images/backgrounds/far.png" id="3_w7iui"]
+[ext_resource type="Texture2D" uid="uid://b0rad8nvbr6vl" path="res://assets/images/backgrounds/sand.png" id="5_fw38o"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ryjjh"]
+font_size = 100
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_la8la")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(544, 400)
+scale = Vector2(10.2234, 10.5709)
+texture = ExtResource("1_hmb5f")
+region_enabled = true
+region_rect = Rect2(0, 96, 48, 32)
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -416.0
+offset_right = 166.0
+offset_bottom = -206.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Carlos Manoel Wendorff" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_n2glt")
+theme_type_variation = &"FlatButton"
+text = "Carlos Manoel Wendorff
+"
+
+[node name="Credits" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_n2glt")
+text = "Gabriel da Silva Rosa
+"
+flat = true
+
+[node name="Quit Game" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_n2glt")
+text = "Arthur Hoengen"
+flat = true
+
+[node name="Quit Game2" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_n2glt")
+text = "Kauan H"
+flat = true
+
+[node name="Quit Game3" type="Button" parent="CanvasLayer/Control/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_n2glt")
+text = "Jeferson A Salomon
+"
+flat = true
+
+[node name="Label" type="Label" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 16.0
+offset_bottom = 332.0
+grow_horizontal = 2
+theme = ExtResource("2_n2glt")
+text = "CREDITS"
+label_settings = SubResource("LabelSettings_ryjjh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="go_back" type="Button" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 163.0
+offset_bottom = 58.0
+scale = Vector2(1.60864, 1.73955)
+theme = ExtResource("2_n2glt")
+text = " < Go back "
+flat = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="back" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(576, 400)
+scale = Vector2(4.50642, 4.21057)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/back"]
+texture = ExtResource("3_w7iui")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+position = Vector2(576, 400)
+scale = Vector2(4.50642, 4.21057)
+motion_mirroring = Vector2(512, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
+position = Vector2(69.2346, 20.8998)
+scale = Vector2(1.7284, 1.61938)
+texture = ExtResource("5_fw38o")
+
+[connection signal="button_down" from="CanvasLayer/Control/go_back" to="." method="_on_go_back_button_down"]

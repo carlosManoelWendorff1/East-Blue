@@ -1,0 +1,27 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://0w0htlpdksdc"]
+
+[ext_resource type="FontFile" uid="uid://bag0jw6rubxbt" path="res://fonts/RevMiniPixel.ttf" id="1_0wqdd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8qrq3"]
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 10.0
+expand_margin_top = 10.0
+expand_margin_right = 10.0
+expand_margin_bottom = 10.0
+
+[resource]
+default_font = ExtResource("1_0wqdd")
+default_font_size = 25
+/font_sizes/font = 25
+/fonts/font = ExtResource("1_0wqdd")
+Button/font_sizes/font_size = 25
+Button/fonts/font = ExtResource("1_0wqdd")
+Button/styles/focus = SubResource("StyleBoxFlat_8qrq3")
+Button/styles/hover = null
