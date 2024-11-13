@@ -17,18 +17,13 @@ func _physics_process(delta: float) -> void:
 	if not caught:
 		velocity.x = fish_speed
 		move_and_slide()
-		for index in get_slide_collision_count():
-			var collision = get_slide_collision(index)
-			
-			if collision == null:
-				return
-				
-			var coll = collision.get_collider()
-			
-			if coll.is_in_group("player") && not $"../Player".has_fish:
-				caught = true
-				velocity.x = 0.0;
-				$"../Player".has_fish = true
-				$"../Player".fish = self
-			elif coll.is_in_group("wall"):
-				fish_speed = -fish_speed
+
+
+func on_collision(body: Node2D):	
+	if body.is_in_group("player") && not body.has_fish:
+		caught = true
+		velocity.x = 0.0
+		body.has_fish = true
+		body.fish = self
+	elif body.is_in_group("wall"):
+		fish_speed = -fish_speed;		
