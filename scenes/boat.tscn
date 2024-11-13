@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=12 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_du806"]
@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://cf7qfpefrq050" path="res://assets/images/backgrounds/Ocean_6/2.png" id="5_g4bcx"]
 [ext_resource type="Texture2D" uid="uid://bd01ld2q5k2it" path="res://assets/images/backgrounds/Ocean_6/4.png" id="6_a2gqs"]
 [ext_resource type="Texture2D" uid="uid://db34t4h6eje6w" path="res://assets/images/backgrounds/Ocean_8/4.png" id="8_dwijc"]
+[ext_resource type="FontFile" uid="uid://c6s1nrll223qc" path="res://assets/fonts/MinimalPixelFont.ttf" id="9_1v2s0"]
+[ext_resource type="Script" path="res://scripts/clock_hud.gd" id="9_25523"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
 size = Vector2(233.726, 231.91)
@@ -30,6 +32,33 @@ position = Vector2(-0.776595, 0.55218)
 rotation = -3.14159
 scale = Vector2(0.551564, -0.452392)
 shape = SubResource("RectangleShape2D_raihm")
+
+[node name="clock_hud" type="Control" parent="boat"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -720.679
+offset_top = -530.093
+offset_right = -680.679
+offset_bottom = -490.093
+size_flags_horizontal = 0
+size_flags_vertical = 4
+script = ExtResource("9_25523")
+
+[node name="clock_label" type="Label" parent="boat/clock_hud"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = -62.1276
+offset_top = -61.8442
+offset_right = 18.8724
+offset_bottom = -13.8442
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("9_1v2s0")
+theme_override_font_sizes/font_size = 72
+text = "00:00"
+
+[node name="time_timer" type="Timer" parent="boat/clock_hud"]
+autostart = true
 
 [node name="BottleNewWorld" parent="." instance=ExtResource("5_1ddor")]
 position = Vector2(408, 192)
