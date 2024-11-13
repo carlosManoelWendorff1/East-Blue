@@ -1,22 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://c3fflikjl8mq8"]
+[gd_scene load_steps=8 format=3 uid="uid://c3fflikjl8mq8"]
 
+[ext_resource type="Texture2D" uid="uid://df3edtkud0eyc" path="res://assets/images/background.png" id="1_2ioqe"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
+[ext_resource type="Texture2D" uid="uid://y1e1t670dde7" path="res://assets/images/backgrounds/Ocean_6/1.png" id="2_ch6xm"]
 [ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_pqn25"]
 [ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
 size = Vector2(130, 129)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grgqi"]
+size = Vector2(23, 31.2547)
+
 [node name="Node2D" type="Node2D"]
 
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_left = -44.0
-offset_top = 612.0
-offset_right = 1133.0
-offset_bottom = 652.0
+[node name="Panel" type="Panel" parent="."]
+offset_left = -421.0
+offset_top = 1361.0
+offset_right = -381.0
+offset_bottom = 1401.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel"]
+position = Vector2(964, -1098)
+scale = Vector2(4.75, 4.73242)
+texture = ExtResource("1_2ioqe")
+
+[node name="Panel2" type="Panel" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel2"]
+position = Vector2(524, 1651)
+scale = Vector2(5.72743, 6.41975)
+texture = ExtResource("2_ch6xm")
 
 [node name="Fish" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(509, 1051)
+position = Vector2(-85, 873)
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(541, 422)
@@ -31,3 +50,19 @@ position = Vector2(2, 0)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_5wwka")
+
+[node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(-1104, 1233)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall"]
+position = Vector2(-2.5, 0.198761)
+shape = SubResource("RectangleShape2D_grgqi")
+
+[node name="Border Wall2" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(160, 1391)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall2"]
+position = Vector2(1983, -3.47826)
+shape = SubResource("RectangleShape2D_grgqi")
