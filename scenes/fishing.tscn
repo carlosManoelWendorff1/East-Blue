@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://df3edtkud0eyc" path="res://assets/images/background.png" id="1_2ioqe"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
-[ext_resource type="Texture2D" uid="uid://y1e1t670dde7" path="res://assets/images/backgrounds/Ocean_6/1.png" id="2_ch6xm"]
+[ext_resource type="Texture2D" uid="uid://b05gu8obejirc" path="res://assets/Gemini_Generated_Image_ftmvtiftmvtiftmv.jpg" id="2_bfh3s"]
 [ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_pqn25"]
 [ext_resource type="PackedScene" path="res://fish.tscn" id="3_ong5k"]
 
@@ -30,9 +30,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel2"]
-position = Vector2(524, 1651)
-scale = Vector2(5.72743, 6.41975)
-texture = ExtResource("2_ch6xm")
+position = Vector2(497, 3144)
+scale = Vector2(2.01584, 2.44527)
+texture = ExtResource("2_bfh3s")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(541, 422)
@@ -72,3 +72,44 @@ position = Vector2(-631, 837)
 
 [node name="Fish" parent="." instance=ExtResource("3_ong5k")]
 position = Vector2(-651, 1544)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 825.0
+offset_top = 559.0
+offset_right = 2592.0
+offset_bottom = 649.0
+color = Color(0.0588235, 0.0627451, 0.141176, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 955.0
+offset_top = 337.0
+offset_right = 1059.0
+offset_bottom = 576.0
+color = Color(0.0588235, 0.0627451, 0.141176, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 26.0
+offset_top = 342.0
+offset_right = 130.0
+offset_bottom = 555.0
+color = Color(0.0588235, 0.0627451, 0.141176, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 20.0
+offset_top = 290.0
+offset_right = 1059.0
+offset_bottom = 351.0
+color = Color(0.0588235, 0.0627451, 0.141176, 1)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1334.0
+offset_top = 555.0
+offset_right = 254.0
+offset_bottom = 645.0
+color = Color(0.0588235, 0.0627451, 0.141176, 1)
+
+[node name="Rope" type="ColorRect" parent="."]
+offset_left = 522.0
+offset_top = 350.0
+offset_right = 562.0
+offset_bottom = 361.0
