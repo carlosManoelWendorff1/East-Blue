@@ -4,9 +4,16 @@ const SPEED = 200.0
 var fish_speed = 200.0
 var caught = false
 var player = null
+var sprite = null
+
+func _ready() -> void:
+	sprite = self.get_child(0)
+	sprite.play()
 
 func _physics_process(delta: float) -> void:
 	if caught:
+		sprite.stop()
+		sprite.flip_v = true
 		var direction := Input.get_axis("ui_up", "ui_down")
 		if direction:
 			velocity.y = direction * SPEED
@@ -19,9 +26,9 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 	if velocity.x < 0:
-		self.get_child(0).flip_h = true
+		sprite.flip_h = true
 	elif velocity.x > 0:
-		self.get_child(0).flip_h = false
+		sprite.flip_h = false
 
 
 func on_collision(body: Node2D):	
