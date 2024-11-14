@@ -19,7 +19,7 @@ func _ready() -> void:
 	if fish_skin < 1:
 		sprite.play("default")
 	elif fish_skin < 2:
-		sprite.play("fish2")s
+		sprite.play("fish2")
 	elif fish_skin < 3:
 		sprite.play("fish3")
 	self.scale.x = fish_multiplier

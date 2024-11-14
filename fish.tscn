@@ -110,6 +110,11 @@ animations = [{
 "loop": true,
 "name": &"fish3",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"fish5",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v3bm7"]
@@ -122,7 +127,7 @@ script = ExtResource("1_o0pe2")
 position = Vector2(68.5, 9)
 scale = Vector2(5.28125, 4.6087)
 sprite_frames = SubResource("SpriteFrames_hsear")
-animation = &"fish3"
+animation = &"fish5"
 
 [node name="Area2D" type="Area2D" parent="."]
 
