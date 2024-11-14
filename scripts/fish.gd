@@ -1,24 +1,38 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+const SPEED = 400.0
+const speed_down = 200.0
 var fish_speed = 200.0
 var caught = false
 var player = null
 var sprite = null
+var fish_multiplier = 1
+var weight = 0
+
+var rng = RandomNumberGenerator.new()
+
 
 func _ready() -> void:
 	sprite = self.get_child(0)
-	sprite.play()
+	var fish_skin = rng.randf_range(0, 3)
+	fish_multiplier = rng.randf_range(1, 1+(position.y-400)/300)
+	if fish_skin < 1:
+		sprite.play("default")
+	elif fish_skin < 2:
+		sprite.play("fish2")s
+	elif fish_skin < 3:
+		sprite.play("fish3")
+	self.scale.x = fish_multiplier
+	self.scale.y = fish_multiplier
+	weight = fish_multiplier * 5
+	
 
 func _physics_process(delta: float) -> void:
 	if caught:
 		sprite.stop()
 		sprite.flip_v = true
-		var direction := Input.get_axis("ui_up", "ui_down")
-		if direction:
-			velocity.y = direction * SPEED
-		else:
-			velocity.y = move_toward(velocity.y, 0, SPEED)
+		position.y = player.position.y
+		position.x = player.position.x - 50
 		move_and_slide()
 		
 	if not caught:

@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
-size = Vector2(130, 129)
+size = Vector2(97, 94)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_grgqi"]
 size = Vector2(23, 31.2547)
@@ -21,7 +21,7 @@ offset_right = -381.0
 offset_bottom = 1401.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel"]
-position = Vector2(964, -1098)
+position = Vector2(964, -1096)
 scale = Vector2(4.75, 4.73242)
 texture = ExtResource("1_2ioqe")
 
@@ -45,7 +45,7 @@ texture = ExtResource("2_pqn25")
 position = Vector2(2, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(0, -0.5)
+position = Vector2(-1.5, -2)
 shape = SubResource("RectangleShape2D_5wwka")
 
 [node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
@@ -109,7 +109,7 @@ offset_bottom = 645.0
 color = Color(0.0588235, 0.0627451, 0.141176, 1)
 
 [node name="Rope" type="ColorRect" parent="."]
-offset_left = 522.0
+offset_left = 533.0
 offset_top = 350.0
-offset_right = 562.0
+offset_right = 548.0
 offset_bottom = 361.0

@@ -1,19 +1,22 @@
 extends CharacterBody2D
 
-const SPEED = 200.0
+const SPEED = 400.00
+const speed_down = 200.0
 var has_fish = false
 var fish = null
 var fish_count = 0;
 var rope = null
+var rope_lim = 2000
 
 func _ready():
 	rope = $"../Rope"
 	
-
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_up", "ui_down")
 	if direction:
-		if position.y > 421 || direction == 1:
+		if direction == 1 && position.y < rope_lim:
+			velocity.y = direction * speed_down
+		elif direction == -1 && position.y > 421:
 			velocity.y = direction * SPEED
 			
 		else:
