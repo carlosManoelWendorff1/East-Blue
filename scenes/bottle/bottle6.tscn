@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ck5ejh4qfohlp"]
+[gd_scene load_steps=8 format=3 uid="uid://c60melm6fgyun"]
 
-[ext_resource type="Script" path="res://scenes/bottle/bottle_new_world.gd" id="1_8ccdg"]
-[ext_resource type="Texture2D" uid="uid://8satmqq6q73x" path="res://assets/images/lore/bottle.png" id="2_m0rvd"]
-[ext_resource type="PackedScene" uid="uid://dvhjmjog021tf" path="res://scenes/bottle/Messages/Message1.tscn" id="3_jkvpk"]
+[ext_resource type="Script" path="res://scenes/bottle/bottle_6.gd" id="1_1qt14"]
+[ext_resource type="Texture2D" uid="uid://8satmqq6q73x" path="res://assets/images/lore/bottle.png" id="2_imrk2"]
+[ext_resource type="PackedScene" uid="uid://cxfvwts7ilme" path="res://scenes/bottle/Messages/Message6.tscn" id="3_86w3f"]
 
 [sub_resource type="Animation" id="Animation_01104"]
 length = 0.001
@@ -70,11 +70,11 @@ _data = {
 
 [node name="BottleNewWorld" type="Node2D"]
 position = Vector2(2, -2)
-script = ExtResource("1_8ccdg")
+script = ExtResource("1_1qt14")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.164824, 0.238441)
-texture = ExtResource("2_m0rvd")
+texture = ExtResource("2_imrk2")
 hframes = 5
 region_rect = Rect2(50, 78, 12, 16)
 
@@ -89,6 +89,6 @@ autoplay = "idle"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_me3h6")
 
-[node name="Message" parent="." instance=ExtResource("3_jkvpk")]
+[node name="Message" parent="." instance=ExtResource("3_86w3f")]
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -3,7 +3,7 @@ signal open_dialog
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	$"../BottleNewWorld/Message".connect("close_dialog",delete_bottle)
+	$"../Bottle6/Message".connect("close_dialog",delete_bottle)
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=27 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -11,9 +11,18 @@
 [ext_resource type="Texture2D" uid="uid://db34t4h6eje6w" path="res://assets/images/backgrounds/Ocean_8/4.png" id="8_dwijc"]
 [ext_resource type="FontFile" uid="uid://c6s1nrll223qc" path="res://assets/fonts/MinimalPixelFont.ttf" id="9_1v2s0"]
 [ext_resource type="Script" path="res://scripts/clock_hud.gd" id="9_25523"]
+[ext_resource type="Script" path="res://scenes/petroleiro.gd" id="10_q5wyc"]
 [ext_resource type="Texture2D" uid="uid://bagvfcccvqu8a" path="res://assets/images/backgrounds/pixil-frame-0.png" id="10_xi2lw"]
 [ext_resource type="Texture2D" uid="uid://bj5nanfyhfehw" path="res://assets/images/backgrounds/pixil-frame-1.png" id="11_4ms74"]
 [ext_resource type="Texture2D" uid="uid://v3j3dffltr1" path="res://assets/images/backgrounds/pixil-frame-2.png" id="12_aay4e"]
+[ext_resource type="Texture2D" uid="uid://bbolfeg80jwhm" path="res://assets/images/backgrounds/Night/Gemini_Generated_Image_3ic4vv3ic4vv3ic4.png" id="12_ejbex"]
+[ext_resource type="Script" path="res://scenes/boia_de_pesca.gd" id="12_p5i6g"]
+[ext_resource type="PackedScene" uid="uid://brscrpfkjd0n8" path="res://scenes/bottle/bottle2.tscn" id="15_qdwv0"]
+[ext_resource type="Texture2D" uid="uid://bpny33ibeyt5q" path="res://assets/Gemini_Generated_Image_8z1q5f8z1q5f8z1q.png" id="16_5hcph"]
+[ext_resource type="PackedScene" uid="uid://br4hjpvyx17rx" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
+[ext_resource type="PackedScene" uid="uid://dpi5j2vfdfrn1" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
+[ext_resource type="PackedScene" uid="uid://ci2lhdywlk6dd" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
+[ext_resource type="PackedScene" uid="uid://c60melm6fgyun" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2fva"]
 animations = [{
@@ -31,6 +40,9 @@ animations = [{
 "name": &"default",
 "speed": 5.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gttuq"]
+size = Vector2(1040, 468)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
 size = Vector2(233.726, 231.91)
@@ -628,6 +640,36 @@ position = Vector2(816, 128)
 scale = Vector2(3, 2.101)
 texture = ExtResource("8_dwijc")
 
+[node name="petroleiro" type="StaticBody2D" parent="."]
+position = Vector2(-768, -208)
+script = ExtResource("10_q5wyc")
+
+[node name="Sprite2D" type="Sprite2D" parent="petroleiro"]
+texture = ExtResource("16_5hcph")
+
+[node name="Area2D" type="Area2D" parent="petroleiro/Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="petroleiro/Sprite2D/Area2D"]
+position = Vector2(-96, 226)
+shape = SubResource("RectangleShape2D_gttuq")
+
+[node name="Boia de pesca" type="StaticBody2D" parent="."]
+position = Vector2(-1416, 200)
+script = ExtResource("12_p5i6g")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boia de pesca"]
+position = Vector2(2736, -32)
+scale = Vector2(0.0783531, 0.0922763)
+texture = ExtResource("12_ejbex")
+
+[node name="Area2D" type="Area2D" parent="Boia de pesca/Sprite2D"]
+position = Vector2(25.5255, 433.481)
+scale = Vector2(0.785092, -2.27542)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boia de pesca/Sprite2D/Area2D"]
+position = Vector2(-96, 226)
+shape = SubResource("RectangleShape2D_gttuq")
+
 [node name="boat" type="CharacterBody2D" parent="."]
 position = Vector2(-16, 192)
 scale = Vector2(0.643837, 0.905501)
@@ -678,3 +720,25 @@ top_level = true
 z_index = 3
 position = Vector2(401, 216)
 scale = Vector2(4.36583, 5.49195)
+
+[node name="Bottle2" parent="." instance=ExtResource("15_qdwv0")]
+position = Vector2(1024, 216)
+scale = Vector2(6, 6)
+
+[node name="Bottle3" parent="." instance=ExtResource("18_v6fnf")]
+position = Vector2(2792, 216)
+scale = Vector2(4.59066, 3.75023)
+
+[node name="Bottle4" parent="." instance=ExtResource("19_icbof")]
+position = Vector2(-1928, 221)
+scale = Vector2(-6.06033, 6.20477)
+
+[node name="Bottle5" parent="." instance=ExtResource("20_uoaxb")]
+position = Vector2(-3248, 216)
+rotation = 3.14159
+scale = Vector2(6.06033, -6.20477)
+
+[node name="Bottle6" parent="." instance=ExtResource("21_81alr")]
+position = Vector2(-4328, 221)
+rotation = -3.14159
+scale = Vector2(6.06033, -6.20477)
