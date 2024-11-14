@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
-[ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_du806"]
+[ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
 [ext_resource type="Texture2D" uid="uid://y1e1t670dde7" path="res://assets/images/backgrounds/Ocean_6/1.png" id="4_gkkfs"]
 [ext_resource type="PackedScene" uid="uid://ck5ejh4qfohlp" path="res://scenes/bottle/bottle_new_world.tscn" id="5_1ddor"]
 [ext_resource type="Texture2D" uid="uid://d4a0v5tcs6ns3" path="res://assets/images/backgrounds/Night/Clouds.png" id="5_1w37v"]
@@ -23,7 +23,8 @@ scale = Vector2(0.643837, 0.905501)
 script = ExtResource("1_xkc0s")
 
 [node name="boat_sprite" type="Sprite2D" parent="boat"]
-texture = ExtResource("2_du806")
+scale = Vector2(5, 5)
+texture = ExtResource("2_j470a")
 
 [node name="Camera2D" type="Camera2D" parent="boat"]
 position = Vector2(12.4255, -220.872)
