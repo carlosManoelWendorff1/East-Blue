@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
 [ext_resource type="Texture2D" uid="uid://b05gu8obejirc" path="res://assets/Gemini_Generated_Image_ftmvtiftmvtiftmv.jpg" id="2_bfh3s"]
 [ext_resource type="Texture2D" uid="uid://drtjl2baagntk" path="res://assets/images/icon.svg" id="2_pqn25"]
-[ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
+[ext_resource type="PackedScene" path="res://fish.tscn" id="3_ong5k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
 size = Vector2(130, 129)
