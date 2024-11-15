@@ -23,10 +23,13 @@ func _ready():
 	weight_test = $"../Player/Camera2D/Weight"
 	fish_count_text = $"../Player/Camera2D/Fish Count"
 	rope_lim = (PlayerVariables.wire_level + 1) * 1500
-	max_weight = (PlayerVariables.capacity_level + 1) * 10
+	max_weight = (PlayerVariables.capacity_level + 1) * 30
 	
 	
 func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("esc"):
+		end_fishing()
+		
 	var direction := Input.get_axis("ui_up", "ui_down")
 	if direction:
 		if direction == 1 && position.y < rope_lim:
@@ -51,7 +54,9 @@ func _physics_process(delta: float) -> void:
 		fish = null
 		
 		if curr_weight > max_weight:
-			get_tree().change_scene_to_file("res://scenes/boat.tscn")
-
-		
+			end_fishing()		
 	move_and_slide()
+	
+func end_fishing():
+	PlayerVariables.coins += curr_weight * 1.5
+	get_tree().change_scene_to_file("res://scenes/boat.tscn")	

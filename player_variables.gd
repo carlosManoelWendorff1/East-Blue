@@ -1,6 +1,6 @@
 extends Node
 
-var coins: int = 1
+var coins: int = 0
 var day: int = 1
 
 #Upgrade Levels:
