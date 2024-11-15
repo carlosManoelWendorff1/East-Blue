@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-const SPEED = 400.0
-const speed_down = 200.0
 var fish_speed = 200.0
 var caught = false
 var player = null

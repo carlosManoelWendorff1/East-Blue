@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 var hook_speed = 200.0
 var fish_in_hook = null
-var max_capacity = (PlayerVariables.capacity_level + 1) * 30
+var max_capacity = (PlayerVariables.capacity_level + 1) * 50
 var rope_lim = (PlayerVariables.wire_level + 1) * 1500
 var used_capacity = 0.0
 

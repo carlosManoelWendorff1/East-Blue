@@ -11,3 +11,4 @@ func new(text: String) -> void:
 
 func timer_callback():
 	message.text = ""
+	timer.stop()

@@ -106,13 +106,88 @@ position = Vector2(2864, 43.2795)
 shape = SubResource("RectangleShape2D_grgqi")
 
 [node name="Fish2" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1081, 1720)
+position = Vector2(-877, 1816)
 
 [node name="Fish3" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1159, 1094)
+position = Vector2(719, 1456)
 
 [node name="Fish" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1015, 2283)
+position = Vector2(-676, 2419)
+
+[node name="Fish7" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(252, 2764)
+
+[node name="Fish8" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1463, 2984)
+
+[node name="Fish9" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-806, 3460)
+
+[node name="Fish10" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1915, 4478)
+
+[node name="Fish12" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-495, 4829)
+
+[node name="Fish13" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-444, 4252)
+
+[node name="Fish14" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1451, 5564)
+
+[node name="Fish11" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(665, 3958)
+
+[node name="Fish4" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1689, 2151)
+
+[node name="Fish15" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-682, 2861)
+
+[node name="Fish16" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(914, 2501)
+
+[node name="Fish17" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-481, 3464)
+
+[node name="Fish18" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(447, 3809)
+
+[node name="Fish19" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1658, 4029)
+
+[node name="Fish20" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-611, 4505)
+
+[node name="Fish21" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(2110, 5523)
+
+[node name="Fish22" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-85, 5512)
+
+[node name="Fish23" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-249, 5297)
+
+[node name="Fish24" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1193, 4527)
+
+[node name="Fish25" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(860, 5003)
+
+[node name="Fish26" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1884, 3196)
+
+[node name="Fish27" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(2127, 2345)
+
+[node name="Fish28" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(130, 2048)
+
+[node name="Fish5" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1932, 1300)
+
+[node name="Fish6" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-65, 1003)
 
 [node name="Rope" type="ColorRect" parent="."]
 offset_left = 536.0
