@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c3fflikjl8mq8"]
+[gd_scene load_steps=10 format=3 uid="uid://c3fflikjl8mq8"]
 
 [ext_resource type="Texture2D" uid="uid://kk0affyode0t" path="res://assets/images/backgrounds/Night/Back.png" id="1_1jkvt"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
 [ext_resource type="Texture2D" uid="uid://corkj4xxuw2o5" path="res://assets/images/barco_hull.png" id="3_rqfrf"]
 [ext_resource type="Texture2D" uid="uid://d0emgr20noo65" path="res://assets/images/anzol_asset.png" id="4_vf152"]
+[ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="6_fkow0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
 size = Vector2(50, 47)
@@ -29,7 +30,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel2"]
-position = Vector2(731, 3531)
+position = Vector2(785, 3153)
 scale = Vector2(2.24419, 2.90479)
 texture = ExtResource("2_kmel3")
 
@@ -54,26 +55,42 @@ shape = SubResource("RectangleShape2D_5wwka")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9, 21)
 
-[node name="Fish Count" type="RichTextLabel" parent="Player/Camera2D"]
-offset_left = -521.0
-offset_top = -309.0
-offset_right = -33.0
-offset_bottom = -269.0
-text = "Fish Count: 0"
-
 [node name="Weight" type="RichTextLabel" parent="Player/Camera2D"]
-offset_left = -522.0
-offset_top = -346.0
-offset_right = -34.0
-offset_bottom = -306.0
+offset_left = -529.0
+offset_top = -348.0
+offset_right = -58.0
+offset_bottom = -259.0
+theme_override_fonts/normal_font = ExtResource("6_fkow0")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
 text = "Weight: 0%"
+
+[node name="Worth" type="RichTextLabel" parent="Player/Camera2D"]
+offset_left = -529.0
+offset_top = -295.0
+offset_right = -58.0
+offset_bottom = -206.0
+theme_override_fonts/normal_font = ExtResource("6_fkow0")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+text = "Worth: 0$"
+
+[node name="exit" type="RichTextLabel" parent="Player/Camera2D"]
+offset_left = 136.0
+offset_top = 324.0
+offset_right = 607.0
+offset_bottom = 413.0
+theme_override_fonts/normal_font = ExtResource("6_fkow0")
+theme_override_font_sizes/bold_italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 30
+text = "Pess ESC to sell all fishes"
 
 [node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
 position = Vector2(-1104, 2516)
 scale = Vector2(1, 40.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall"]
-position = Vector2(-392, 24.5714)
+position = Vector2(-326, 15.7764)
 shape = SubResource("RectangleShape2D_grgqi")
 
 [node name="Border Wall2" type="StaticBody2D" parent="." groups=["wall"]]
@@ -81,7 +98,7 @@ position = Vector2(160, 1391)
 scale = Vector2(1, 40.25)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall2"]
-position = Vector2(2839.88, 53.4099)
+position = Vector2(2864, 43.2795)
 shape = SubResource("RectangleShape2D_grgqi")
 
 [node name="Fish2" parent="." instance=ExtResource("3_ong5k")]
@@ -98,4 +115,4 @@ offset_left = 536.0
 offset_top = 10.0
 offset_right = 548.0
 offset_bottom = 361.0
-color = Color(0.639216, 0.6, 0.576471, 1)
+color = Color(0.921922, 0.909865, 0.902692, 1)

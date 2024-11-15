@@ -16,12 +16,12 @@ func format_weight(value: String) -> String:
 	return "Weight: " + value + "%"
 
 func format_fish_count(value: String) -> String:
-	return "Fish count: " + value
+	return "Worth: " + value + "$"
 
 func _ready():
 	rope = $"../Rope"
 	weight_test = $"../Player/Camera2D/Weight"
-	fish_count_text = $"../Player/Camera2D/Fish Count"
+	fish_count_text = $"../Player/Camera2D/Worth"
 	rope_lim = (PlayerVariables.wire_level + 1) * 1500
 	max_weight = (PlayerVariables.capacity_level + 1) * 30
 	
@@ -50,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		curr_weight += fish.weight
 		fish_count += 1;
 		weight_test.text = format_weight(str((curr_weight / max_weight) * 100).pad_decimals(2))
-		fish_count_text.text = format_fish_count(str(fish_count).pad_decimals(2))
+		fish_count_text.text = format_fish_count(str(curr_weight * 1.5).pad_decimals(0))
 		fish = null
 		
 		if curr_weight > max_weight:
