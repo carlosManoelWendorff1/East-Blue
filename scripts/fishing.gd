@@ -27,9 +27,10 @@ func _physics_process(delta: float) -> void:
 		if direction == 1 && position.y < rope_lim:
 			velocity.y = direction * hook_speed
 		elif direction == -1 && position.y > 421:
-			if fish_in_hook.on_frenzy:
+			if fish_in_hook != null && fish_in_hook.on_frenzy:
 				popup.new("Stop!")
-				velocity.y = -direction * hook_speed * 2
+				if position.y < rope_lim:
+					velocity.y = -direction * hook_speed * 2
 			else:
 				velocity.y = direction * hook_speed * 2
 		else:
