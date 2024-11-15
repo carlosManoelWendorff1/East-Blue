@@ -16,12 +16,12 @@ func close_dialog() -> void:
 	$Message.hide()  # Optionally hide the message when closing it.
 
 # Function that shows the dialog and sets focus to the button
-func _on_area_2d_body_entered(body: Node2D) -> void:
-	emit_signal("open_dialog")
-	print("Entered area")
-	# Show the dialog
-	$Message/CanvasLayer.show()
-	pass
+#func _on_area_2d_body_entered(body: Node2D) -> void:
+#	emit_signal("open_dialog")
+#	print("Entered area")
+#	# Show the dialog
+#	$Message/CanvasLayer.show()
+#	pass
 	
 func delete_bottle() -> void:
 	$".".hide()
