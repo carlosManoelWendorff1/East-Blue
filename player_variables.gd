@@ -3,11 +3,18 @@ extends Node
 var coins: int = 0
 var day: int = 1
 
+#Time
+var time = { "hour": 18, "minute": 0 }
+
+#Bottles
+var bottle_new_world = 0
+
 #Upgrade Levels:
 var wire_level = 0
 var speed_level = 0
 var capacity_level = 0
 
+#Boat position
 var boat_position = Vector2.ZERO
 	
 func add_coins(value: int) -> void:

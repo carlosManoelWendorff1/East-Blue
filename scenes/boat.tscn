@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=29 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://v3j3dffltr1" path="res://assets/images/backgrounds/pixil-frame-2.png" id="12_aay4e"]
 [ext_resource type="Texture2D" uid="uid://bbolfeg80jwhm" path="res://assets/images/backgrounds/Night/Gemini_Generated_Image_3ic4vv3ic4vv3ic4.png" id="12_ejbex"]
 [ext_resource type="Script" path="res://scenes/boia_de_pesca.gd" id="12_p5i6g"]
-[ext_resource type="PackedScene" uid="uid://brscrpfkjd0n8" path="res://scenes/bottle/bottle2.tscn" id="15_qdwv0"]
 [ext_resource type="Texture2D" uid="uid://bpny33ibeyt5q" path="res://assets/Gemini_Generated_Image_8z1q5f8z1q5f8z1q.png" id="16_5hcph"]
 [ext_resource type="PackedScene" uid="uid://br4hjpvyx17rx" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
 [ext_resource type="AudioStream" uid="uid://cu17vwfypbwnn" path="res://assets/boat-outboard-motor-01.wav" id="18_xvaw0"]
@@ -735,10 +734,6 @@ top_level = true
 z_index = 3
 position = Vector2(401, 216)
 scale = Vector2(4.36583, 5.49195)
-
-[node name="Bottle2" parent="." instance=ExtResource("15_qdwv0")]
-position = Vector2(1024, 216)
-scale = Vector2(6, 6)
 
 [node name="Bottle3" parent="." instance=ExtResource("18_v6fnf")]
 position = Vector2(2792, 216)

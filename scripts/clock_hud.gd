@@ -4,7 +4,7 @@ extends Control
 @onready var clock_label = $clock_label
 @onready var timer = $time_timer
 
-var game_time = { "hour": 18, "minute": 0 }
+var game_time = PlayerVariables.time
 
 func _ready():
 	timer.timeout.connect(update_game_time)
@@ -21,3 +21,6 @@ func update_game_time():
 
 	var formatted_time = "%02d:%02d" % [game_time["hour"], game_time["minute"]]
 	clock_label.text = formatted_time
+	
+func _exit_tree():
+	PlayerVariables.time = game_time

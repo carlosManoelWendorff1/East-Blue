@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://corkj4xxuw2o5" path="res://assets/images/barco_hull.png" id="3_rqfrf"]
 [ext_resource type="Texture2D" uid="uid://d0emgr20noo65" path="res://assets/images/anzol_asset.png" id="4_vf152"]
 [ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="6_fkow0"]
-[ext_resource type="PackedScene" uid="uid://tllu6ykkm4dj" path="res://scenes/popup.tscn" id="7_lcmh6"]
+[ext_resource type="PackedScene" path="res://scenes/popup.tscn" id="7_lcmh6"]
 [ext_resource type="AudioStream" uid="uid://rgvmauel0yf7" path="res://assets/Underwater Theme - New Super Mario Bros. Wii [ ezmp3.cc ].mp3" id="8_wkg3i"]
 [ext_resource type="AudioStream" uid="uid://2skg4xig7nw4" path="res://assets/Terraria Music - Underground [ ezmp3.cc ].mp3" id="9_ch7iu"]
 [ext_resource type="AudioStream" uid="uid://cc8ic35uavwhg" path="res://assets/Terraria Music - Underground Corruption [ ezmp3.cc ].mp3" id="10_eajy7"]
