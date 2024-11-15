@@ -11,9 +11,9 @@ script = ExtResource("2_gdomf")
 upgrade_name = "Upgrade Linha"
 upgrade_description = "Esse upgrade irá aumentar o tamanho da sua linha, permitindo a pesca de peixes que habitam regiões mais profundas"
 upgrade_cost = 50
-upgrade_measure = "km"
-upgrade_value = 1
-upgrade_initial = 1
+upgrade_measure = "m"
+upgrade_value = 1500
+upgrade_initial = 1500
 upgrade_key = "wire"
 
 [sub_resource type="Resource" id="Resource_48i7v"]
@@ -49,7 +49,7 @@ upgrade_option_array = [NodePath("MarginContainer/VBoxContainer/UpgradeContainer
 available_upgrades = Array[ExtResource("2_gdomf")]([SubResource("Resource_fg8s1"), SubResource("Resource_48i7v"), SubResource("Resource_p0n2k")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(3.9, 2.1)
+scale = Vector2(2.11328, 1.40625)
 texture = ExtResource("3_0oww8")
 centered = false
 
