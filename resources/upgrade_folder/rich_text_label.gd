@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends RichTextLabel
 
 
 # Called when the node enters the scene tree for the first time.
@@ -8,8 +8,4 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if($Sprite2D/Area2D.has_overlapping_bodies() and Input.is_action_just_released("ui_accept")):
-		PlayerVariables.day += 1
-		get_tree().change_scene_to_file("res://scenes/upgrades.tscn")
-		
-	pass
+	text = str(PlayerVariables.coins) + " [img]assets/images/Coin/coin.tres[/img]"

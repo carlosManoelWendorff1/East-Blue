@@ -17,12 +17,12 @@
 [ext_resource type="Texture2D" uid="uid://v3j3dffltr1" path="res://assets/images/backgrounds/pixil-frame-2.png" id="12_aay4e"]
 [ext_resource type="Texture2D" uid="uid://bbolfeg80jwhm" path="res://assets/images/backgrounds/Night/Gemini_Generated_Image_3ic4vv3ic4vv3ic4.png" id="12_ejbex"]
 [ext_resource type="Script" path="res://scenes/boia_de_pesca.gd" id="12_p5i6g"]
-[ext_resource type="PackedScene" uid="uid://brscrpfkjd0n8" path="res://scenes/bottle/bottle2.tscn" id="15_qdwv0"]
+[ext_resource type="PackedScene" path="res://scenes/bottle/bottle2.tscn" id="15_qdwv0"]
 [ext_resource type="Texture2D" uid="uid://bpny33ibeyt5q" path="res://assets/Gemini_Generated_Image_8z1q5f8z1q5f8z1q.png" id="16_5hcph"]
-[ext_resource type="PackedScene" uid="uid://br4hjpvyx17rx" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
-[ext_resource type="PackedScene" uid="uid://dpi5j2vfdfrn1" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
-[ext_resource type="PackedScene" uid="uid://ci2lhdywlk6dd" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
-[ext_resource type="PackedScene" uid="uid://c60melm6fgyun" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
+[ext_resource type="PackedScene" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
+[ext_resource type="PackedScene" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
+[ext_resource type="PackedScene" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
+[ext_resource type="PackedScene" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2fva"]
 animations = [{

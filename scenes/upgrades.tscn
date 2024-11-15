@@ -1,0 +1,143 @@
+[gd_scene load_steps=9 format=3 uid="uid://p806t4a18d1x"]
+
+[ext_resource type="Script" path="res://resources/upgrade_folder/upgrade_menu.gd" id="1_3gthn"]
+[ext_resource type="Script" path="res://resources/upgrade_folder/base_upgrade.gd" id="2_gdomf"]
+[ext_resource type="Texture2D" uid="uid://u2w4njqr21f" path="res://assets/images/store.png" id="3_0oww8"]
+[ext_resource type="PackedScene" uid="uid://bx7afwf4meea2" path="res://resources/upgrade_folder/upgrade_option.tscn" id="5_7e264"]
+[ext_resource type="Script" path="res://resources/upgrade_folder/rich_text_label.gd" id="5_8glm5"]
+
+[sub_resource type="Resource" id="Resource_fg8s1"]
+script = ExtResource("2_gdomf")
+upgrade_name = "Upgrade Linha"
+upgrade_description = "Esse upgrade irá aumentar o tamanho da sua linha, permitindo a pesca de peixes que habitam regiões mais profundas"
+upgrade_cost = 50
+upgrade_measure = "km"
+upgrade_value = 1
+upgrade_initial = 1
+upgrade_key = "wire"
+
+[sub_resource type="Resource" id="Resource_48i7v"]
+script = ExtResource("2_gdomf")
+upgrade_name = "Upgrade Velocidade"
+upgrade_description = "Esse upgrade irá aumentar a velocidade do seu barco. Irá ajudar para fugir do sol e dos-. É, fugir do Sol."
+upgrade_cost = 50
+upgrade_measure = "knots"
+upgrade_value = 50
+upgrade_initial = 50
+upgrade_key = "speed"
+
+[sub_resource type="Resource" id="Resource_p0n2k"]
+script = ExtResource("2_gdomf")
+upgrade_name = "Upgrade Capacidade"
+upgrade_description = "Esse upgrade irá aumentar a capacidade do barco, permitindo carregar mais peixes."
+upgrade_cost = 50
+upgrade_measure = "kg"
+upgrade_value = 30
+upgrade_initial = 10
+upgrade_key = "capacity"
+
+[node name="UpgradeMenu" type="Control" node_paths=PackedStringArray("upgrade_option_array")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+script = ExtResource("1_3gthn")
+upgrade_option_array = [NodePath("MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer/UpgradeWire"), NodePath("MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer/UpgradeSpeed"), NodePath("MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer/UpgradeCapacity")]
+available_upgrades = Array[ExtResource("2_gdomf")]([SubResource("Resource_fg8s1"), SubResource("Resource_48i7v"), SubResource("Resource_p0n2k")])
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.9, 2.1)
+texture = ExtResource("3_0oww8")
+centered = false
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Choose an upgrade"
+
+[node name="UpgradeContainerPanel" type="Panel" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 330
+theme_override_constants/margin_bottom = 330
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="UpgradeWire" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_7e264")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../UpgradeCapacity")
+focus_neighbor_right = NodePath("../UpgradeSpeed")
+focus_neighbor_bottom = NodePath("../../../../Button")
+
+[node name="UpgradeSpeed" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_7e264")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../UpgradeWire")
+focus_neighbor_right = NodePath("../UpgradeCapacity")
+focus_neighbor_bottom = NodePath("../../../../Button")
+
+[node name="UpgradeCapacity" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel/MarginContainer/HBoxContainer" instance=ExtResource("5_7e264")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../UpgradeSpeed")
+focus_neighbor_right = NodePath("../UpgradeWire")
+focus_neighbor_bottom = NodePath("../../../../Button")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MarginContainer/VBoxContainer/UpgradeContainerPanel"]
+layout_mode = 0
+offset_right = 150.0
+offset_bottom = 40.0
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource("5_8glm5")
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Exit"
+
+[connection signal="button_down" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_button_down"]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="BaseUpgrade" load_steps=2 format=3 uid="uid://lxndci4gsqod"]
+
+[ext_resource type="Script" path="res://resources/upgrade_folder/base_upgrade.gd" id="1_1lo2i"]
+
+[resource]
+script = ExtResource("1_1lo2i")
+upgrade_name = "Null"
+upgrade_description = "This is not a upgrade, something either broke or everything just brought.
+We're all descending in the depths..."
+upgrade_cost = 0
+upgrade_measure = "m"
+upgrade_value = 0
+upgrade_initial = 0
