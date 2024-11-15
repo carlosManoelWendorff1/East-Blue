@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=30 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://db34t4h6eje6w" path="res://assets/images/backgrounds/Ocean_8/4.png" id="8_dwijc"]
 [ext_resource type="FontFile" uid="uid://c6s1nrll223qc" path="res://assets/fonts/MinimalPixelFont.ttf" id="9_1v2s0"]
 [ext_resource type="Script" path="res://scripts/clock_hud.gd" id="9_25523"]
+[ext_resource type="AudioStream" uid="uid://cnacyxuxwxuk6" path="res://assets/ocean-waves-250310.mp3" id="10_fm665"]
 [ext_resource type="Script" path="res://scenes/petroleiro.gd" id="10_q5wyc"]
 [ext_resource type="Texture2D" uid="uid://bagvfcccvqu8a" path="res://assets/images/backgrounds/pixil-frame-0.png" id="10_xi2lw"]
 [ext_resource type="Texture2D" uid="uid://bj5nanfyhfehw" path="res://assets/images/backgrounds/pixil-frame-1.png" id="11_4ms74"]
@@ -19,7 +20,9 @@
 [ext_resource type="Script" path="res://scenes/boia_de_pesca.gd" id="12_p5i6g"]
 [ext_resource type="PackedScene" uid="uid://brscrpfkjd0n8" path="res://scenes/bottle/bottle2.tscn" id="15_qdwv0"]
 [ext_resource type="Texture2D" uid="uid://bpny33ibeyt5q" path="res://assets/Gemini_Generated_Image_8z1q5f8z1q5f8z1q.png" id="16_5hcph"]
+[ext_resource type="AudioStream" uid="uid://cvos7sai00imr" path="res://assets/car-engine-revving-94831.mp3" id="18_m2qhd"]
 [ext_resource type="PackedScene" uid="uid://br4hjpvyx17rx" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
+[ext_resource type="AudioStream" uid="uid://c28bk5npyrd7w" path="res://assets/engine-start-86242.mp3" id="19_d84sj"]
 [ext_resource type="PackedScene" uid="uid://dpi5j2vfdfrn1" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
 [ext_resource type="PackedScene" uid="uid://ci2lhdywlk6dd" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
 [ext_resource type="PackedScene" uid="uid://c60melm6fgyun" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
@@ -640,6 +643,11 @@ position = Vector2(816, 128)
 scale = Vector2(3, 2.101)
 texture = ExtResource("8_dwijc")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("10_fm665")
+volume_db = 6.172
+autoplay = true
+
 [node name="petroleiro" type="StaticBody2D" parent="."]
 position = Vector2(-768, -208)
 script = ExtResource("10_q5wyc")
@@ -676,6 +684,7 @@ scale = Vector2(0.643837, 0.905501)
 script = ExtResource("1_xkc0s")
 
 [node name="boat_sprite" type="Sprite2D" parent="boat"]
+position = Vector2(-0.165, 0)
 scale = Vector2(5, 5)
 texture = ExtResource("2_j470a")
 
@@ -714,6 +723,12 @@ text = "00:00"
 
 [node name="time_timer" type="Timer" parent="boat/clock_hud"]
 autostart = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="boat"]
+stream = ExtResource("18_m2qhd")
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="boat"]
+stream = ExtResource("19_d84sj")
 
 [node name="BottleNewWorld" parent="." instance=ExtResource("5_1ddor")]
 top_level = true
