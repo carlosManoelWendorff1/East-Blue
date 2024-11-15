@@ -25,7 +25,6 @@
 [ext_resource type="AudioStream" uid="uid://c28bk5npyrd7w" path="res://assets/engine-start-86242.mp3" id="19_d84sj"]
 [ext_resource type="PackedScene" uid="uid://dpi5j2vfdfrn1" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
 [ext_resource type="PackedScene" uid="uid://ci2lhdywlk6dd" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
-[ext_resource type="PackedScene" uid="uid://c60melm6fgyun" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2fva"]
 animations = [{
@@ -49,6 +48,9 @@ size = Vector2(1105.43, 740.996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
 size = Vector2(233.726, 231.91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63new"]
+size = Vector2(86.25, 146.745)
 
 [node name="Node2D" type="Node2D"]
 
@@ -779,7 +781,18 @@ position = Vector2(-3248, 216)
 rotation = 3.14159
 scale = Vector2(6.06033, -6.20477)
 
-[node name="Bottle6" parent="." instance=ExtResource("21_81alr")]
-position = Vector2(-4328, 221)
-rotation = -3.14159
-scale = Vector2(6.06033, -6.20477)
+[node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(-1104, 2516)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall"]
+position = Vector2(-2494, -57.764)
+shape = SubResource("RectangleShape2D_63new")
+
+[node name="Border Wall2" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(-1104, 2516)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall2"]
+position = Vector2(4058, -67.7019)
+shape = SubResource("RectangleShape2D_63new")

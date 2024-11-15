@@ -22,6 +22,7 @@ func _physics_process(delta: float) -> void:
 		end_fishing()
 		
 	var direction := Input.get_axis("ui_up", "ui_down")
+	velocity.y = 0
 	
 	if direction:
 		if direction == 1 && position.y < rope_lim:
