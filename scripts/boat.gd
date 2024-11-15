@@ -1,34 +1,38 @@
 extends CharacterBody2D
 
-# Constants for speed and jump velocity
-var speed = 300.0
-const JUMP_VELOCITY = -400.0
+var modifier = PlayerVariables.speed_level + 1
 
-# Define the set_speed signal
+# Constants for speed and acceleration
+var speed = 0.0
+var MAX_SPEED = 100.0 * modifier
+var ACCELERATION = 50.0 * modifier
+const DECELERATION = 100.0
 
-func _ready():
-	$"../BottleNewWorld".connect("open_dialog",stop_player)
-	$"../BottleNewWorld/Message".connect("close_dialog",release_player)
-	pass
-	
+# Direction tracking variables
+var facing_right = true
+var target_scale_x = 1.0  # Target scale based on facing direction
+const FLIP_DURATION = 0.2  # Duration of the flip in seconds
+var flip_time = 0.0  # Time elapsed during the flip
+
 func _physics_process(delta: float) -> void:
-	# Get the input direction and handle movement/deceleration.
 	var direction := Input.get_axis("ui_left", "ui_right")
+
 	if direction != 0:
-		velocity.x = direction * speed
+		speed = move_toward(speed, direction * MAX_SPEED, ACCELERATION * delta)
+
+		# Trigger flip if direction changes
+		if (direction > 0 and not facing_right) or (direction < 0 and facing_right):
+			facing_right = not facing_right
+			target_scale_x = 1.0 if facing_right else -1.0
+			flip_time = FLIP_DURATION  # Start the flip effect
 	else:
-		velocity.x = move_toward(velocity.x, 0, speed * delta)
+		speed = move_toward(speed, 0, DECELERATION * delta)
+
+	# Gradually update the sprite scale during the flip
+	if flip_time > 0:
+		flip_time -= delta
+		# Interpolate scale.x smoothly towards the target value
+		$boat_sprite.scale.x = lerp($boat_sprite.scale.x, target_scale_x, delta / FLIP_DURATION)
+
+	velocity.x = speed
 	move_and_slide()
-	
-func stop_player() -> void:
-	print("stop_player")
-	self.speed = 0
-	
-func release_player() -> void:
-	print("release_player")
-	self.speed = 300
-	
-# Function to handle the speed change
-func set_speed(new_speed):
-	speed = new_speed
-	print("Speed set to:", speed)

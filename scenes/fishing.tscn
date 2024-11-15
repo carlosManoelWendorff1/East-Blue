@@ -1,10 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://c3fflikjl8mq8"]
 
 [ext_resource type="Texture2D" uid="uid://kk0affyode0t" path="res://assets/images/backgrounds/Night/Back.png" id="1_1jkvt"]
-[ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="1_dgeuk"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
-[ext_resource type="Texture2D" uid="uid://b05gu8obejirc" path="res://assets/Gemini_Generated_Image_ftmvtiftmvtiftmv.jpg" id="2_bfh3s"]
+[ext_resource type="Texture2D" uid="uid://bf0la1stx7pnm" path="res://assets/images/backgrounds/seabed.jpeg" id="2_kmel3"]
 [ext_resource type="PackedScene" uid="uid://s4fq7dylslqb" path="res://fish.tscn" id="3_ong5k"]
+[ext_resource type="Texture2D" uid="uid://corkj4xxuw2o5" path="res://assets/images/barco_hull.png" id="3_rqfrf"]
 [ext_resource type="Texture2D" uid="uid://d0emgr20noo65" path="res://assets/images/anzol_asset.png" id="4_vf152"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
@@ -31,12 +31,12 @@ offset_bottom = 40.0
 [node name="Sprite2D" type="Sprite2D" parent="Panel2"]
 position = Vector2(731, 3531)
 scale = Vector2(2.24419, 2.90479)
-texture = ExtResource("2_bfh3s")
+texture = ExtResource("2_kmel3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(548, 491)
-scale = Vector2(12.4625, 10.7361)
-texture = ExtResource("1_dgeuk")
+position = Vector2(710, 341)
+scale = Vector2(1.93055, 1.91)
+texture = ExtResource("3_rqfrf")
 
 [node name="Player" type="CharacterBody2D" parent="." groups=["player"]]
 position = Vector2(541, 422)
@@ -95,7 +95,7 @@ position = Vector2(-1015, 2283)
 
 [node name="Rope" type="ColorRect" parent="."]
 offset_left = 536.0
-offset_top = 350.0
+offset_top = 10.0
 offset_right = 548.0
 offset_bottom = 361.0
 color = Color(0.639216, 0.6, 0.576471, 1)
