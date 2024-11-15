@@ -121,6 +121,8 @@ animations = [{
 size = Vector2(44.2843, 33.1294)
 
 [node name="Fish" type="CharacterBody2D"]
+z_index = 99
+z_as_relative = false
 script = ExtResource("1_o0pe2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
