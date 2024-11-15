@@ -3,15 +3,14 @@ extends CharacterBody2D
 var fish_speed = 200.0
 var caught = false
 var player = null
-var sprite = null
+@onready var sprite = $"AnimatedSprite2D"
 var fish_multiplier = 1
 var weight = 0
+var on_frenzy = false
 
 var rng = RandomNumberGenerator.new()
 
-
 func _ready() -> void:
-	sprite = self.get_child(0)
 	var fish_skin = rng.randf_range(0, 3)
 	fish_multiplier = rng.randf_range(1, 1+(position.y-400)/300)
 	if fish_skin < 1:
@@ -48,3 +47,12 @@ func on_collision(body: Node2D):
 		body.add_fish(self)
 	elif body.is_in_group("wall"):
 		fish_speed = -fish_speed;		
+
+func start_frenzy():
+	if caught:
+		var mad = rng.randf_range(0, 2)
+		sprite.modulate = Color.WHITE
+		on_frenzy = false
+		if mad > 1:
+			sprite.modulate = Color.RED
+			on_frenzy = true

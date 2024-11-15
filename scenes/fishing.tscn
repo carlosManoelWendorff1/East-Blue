@@ -54,6 +54,8 @@ shape = SubResource("RectangleShape2D_5wwka")
 position = Vector2(-9, 21)
 
 [node name="Popup" parent="Player/Camera2D" instance=ExtResource("7_lcmh6")]
+z_index = 100
+z_as_relative = false
 offset_left = 45.0
 offset_top = -77.0
 offset_right = 45.0

@@ -136,4 +136,9 @@ position = Vector2(23.5, -13)
 scale = Vector2(1.64844, 0.664062)
 shape = SubResource("RectangleShape2D_v3bm7")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="body_entered" from="Area2D" to="." method="on_collision"]
+[connection signal="timeout" from="Timer" to="." method="start_frenzy"]
