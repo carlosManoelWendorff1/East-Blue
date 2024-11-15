@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://tllu6ykkm4dj"]
+
+[ext_resource type="Script" path="res://scenes/popup.gd" id="1_odfjt"]
+[ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="2_0odkw"]
+
+[node name="Popup" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_odfjt")
+
+[node name="Message" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_right = 553.0
+offset_bottom = 40.0
+theme_override_fonts/normal_font = ExtResource("2_0odkw")
+theme_override_font_sizes/bold_italics_font_size = 30
+theme_override_font_sizes/normal_font_size = 30
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="timer_callback"]

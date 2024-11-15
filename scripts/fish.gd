@@ -46,11 +46,7 @@ func _physics_process(delta: float) -> void:
 
 
 func on_collision(body: Node2D):	
-	if body.is_in_group("player") && not body.has_fish && weight + body.curr_weight <= body.max_weight:
-		player = body
-		caught = true
-		velocity.x = 0.0
-		body.has_fish = true
-		body.fish = self
+	if body.is_in_group("player"):
+		body.add_fish(self)
 	elif body.is_in_group("wall"):
 		fish_speed = -fish_speed;		
