@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	if caught:
 		sprite.stop()
 		sprite.flip_v = true
-		position.y = player.position.y + 10
+		position.y = player.position.y + 30
 		position.x = player.position.x - 50
 		move_and_slide()
 		

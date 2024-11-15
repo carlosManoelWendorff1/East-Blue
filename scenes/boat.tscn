@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=28 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -24,7 +24,6 @@
 [ext_resource type="AudioStream" uid="uid://c28bk5npyrd7w" path="res://assets/engine-start-86242.mp3" id="19_d84sj"]
 [ext_resource type="PackedScene" uid="uid://dpi5j2vfdfrn1" path="res://scenes/bottle/bottle4.tscn" id="19_icbof"]
 [ext_resource type="PackedScene" uid="uid://ci2lhdywlk6dd" path="res://scenes/bottle/bottle5.tscn" id="20_uoaxb"]
-[ext_resource type="PackedScene" uid="uid://c60melm6fgyun" path="res://scenes/bottle/bottle6.tscn" id="21_81alr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_a2fva"]
 animations = [{
@@ -746,9 +745,4 @@ scale = Vector2(-6.06033, 6.20477)
 [node name="Bottle5" parent="." instance=ExtResource("20_uoaxb")]
 position = Vector2(-3248, 216)
 rotation = 3.14159
-scale = Vector2(6.06033, -6.20477)
-
-[node name="Bottle6" parent="." instance=ExtResource("21_81alr")]
-position = Vector2(-4328, 221)
-rotation = -3.14159
 scale = Vector2(6.06033, -6.20477)
