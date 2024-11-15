@@ -17,6 +17,9 @@ var facing_right = true
 var intro_played = false
 
 func _ready():
+		# Check if we have saved a position from a previous scene
+	if PlayerVariables.boat_position != Vector2.ZERO:
+		position = PlayerVariables.boat_position  # Set the boat's position to the saved position
 	# Play the intro sound once
 	if not intro_played:
 		intro_sound.play()
@@ -36,19 +39,20 @@ func _physics_process(delta: float) -> void:
 		# Move the boat
 		speed = move_toward(speed, direction * MAX_SPEED, ACCELERATION * delta)
 
-		# Flip the sprite if the direction changes
-		if (direction > 0 and not facing_right) or (direction < 0 and facing_right) and speed < 5:
-			facing_right = not facing_right
-			# Flip the sprite by changing scale.x
-			$boat_sprite.scale.x = 5 if facing_right else -5
+	# Flip the sprite if the direction changes and speed is low
+		if (direction > 0 and not facing_right) or (direction < 0 and facing_right):
+			if abs(speed) < 5:  # Check that speed is low before flipping
+				facing_right = not facing_right
+				# Flip the sprite by changing scale.x
+				$boat_sprite.scale.x = 5 if facing_right else -5
 	else:
 		speed = move_toward(speed, 0, DECELERATION * delta)
 
-	# Apply movement
+		# Apply movement
 	velocity.x = speed
 	move_and_slide()
 
-	# Update the engine sound based on speed
+# Update the engine sound based on speed
 	update_engine_sound()
 
 func update_engine_sound():
@@ -62,3 +66,6 @@ func update_engine_sound():
 	# Optionally, adjust volume based on speed (optional)
 	var volume = -10 + (abs_speed / MAX_SPEED) * 10  # Volume between -10 dB (idle) and 0 dB (full speed)
 	engine_sound.volume_db = volume
+	
+func _exit_tree():
+	PlayerVariables.boat_position = position

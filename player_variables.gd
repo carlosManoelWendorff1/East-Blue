@@ -7,6 +7,8 @@ var day: int = 1
 var wire_level = 0
 var speed_level = 0
 var capacity_level = 0
+
+var boat_position = Vector2.ZERO
 	
 func add_coins(value: int) -> void:
 	coins += value
