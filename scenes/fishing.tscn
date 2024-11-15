@@ -20,7 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="sky"]
-position = Vector2(730, 1869)
+position = Vector2(730, 1870)
 scale = Vector2(12.7078, 21.3803)
 texture = ExtResource("1_1jkvt")
 
@@ -54,11 +54,18 @@ shape = SubResource("RectangleShape2D_5wwka")
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9, 21)
 
+[node name="Fish Count" type="RichTextLabel" parent="Player/Camera2D"]
+offset_left = -521.0
+offset_top = -309.0
+offset_right = -33.0
+offset_bottom = -269.0
+text = "Fish Count: 0"
+
 [node name="Weight" type="RichTextLabel" parent="Player/Camera2D"]
-offset_left = -740.0
-offset_top = -453.0
-offset_right = -252.0
-offset_bottom = -413.0
+offset_left = -522.0
+offset_top = -346.0
+offset_right = -34.0
+offset_bottom = -306.0
 text = "Weight: 0%"
 
 [node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
@@ -78,13 +85,13 @@ position = Vector2(2839.88, 53.4099)
 shape = SubResource("RectangleShape2D_grgqi")
 
 [node name="Fish2" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-678, 2538)
+position = Vector2(-1081, 1720)
 
 [node name="Fish3" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-739, 2090)
+position = Vector2(-1159, 1094)
 
 [node name="Fish" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-723, 3084)
+position = Vector2(-1015, 2283)
 
 [node name="Rope" type="ColorRect" parent="."]
 offset_left = 536.0
