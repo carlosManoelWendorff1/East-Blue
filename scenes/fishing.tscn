@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://c3fflikjl8mq8"]
+[gd_scene load_steps=11 format=3 uid="uid://c3fflikjl8mq8"]
 
 [ext_resource type="Texture2D" uid="uid://kk0affyode0t" path="res://assets/images/backgrounds/Night/Back.png" id="1_1jkvt"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://corkj4xxuw2o5" path="res://assets/images/barco_hull.png" id="3_rqfrf"]
 [ext_resource type="Texture2D" uid="uid://d0emgr20noo65" path="res://assets/images/anzol_asset.png" id="4_vf152"]
 [ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="6_fkow0"]
+[ext_resource type="AudioStream" uid="uid://rgvmauel0yf7" path="res://assets/Underwater Theme - New Super Mario Bros. Wii [ ezmp3.cc ].mp3" id="8_wkg3i"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5wwka"]
 size = Vector2(50, 47)
@@ -116,3 +117,7 @@ offset_top = 10.0
 offset_right = 548.0
 offset_bottom = 361.0
 color = Color(0.921922, 0.909865, 0.902692, 1)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_wkg3i")
+autoplay = true

@@ -37,7 +37,7 @@ func _physics_process(delta: float) -> void:
 		speed = move_toward(speed, direction * MAX_SPEED, ACCELERATION * delta)
 
 		# Flip the sprite if the direction changes
-		if (direction > 0 and not facing_right) or (direction < 0 and facing_right):
+		if (direction > 0 and not facing_right) or (direction < 0 and facing_right) and speed < 5:
 			facing_right = not facing_right
 			# Flip the sprite by changing scale.x
 			$boat_sprite.scale.x = 5 if facing_right else -5

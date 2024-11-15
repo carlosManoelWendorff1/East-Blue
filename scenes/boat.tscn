@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=30 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://db34t4h6eje6w" path="res://assets/images/backgrounds/Ocean_8/4.png" id="8_dwijc"]
 [ext_resource type="FontFile" uid="uid://c6s1nrll223qc" path="res://assets/fonts/MinimalPixelFont.ttf" id="9_1v2s0"]
 [ext_resource type="Script" path="res://scripts/clock_hud.gd" id="9_25523"]
+[ext_resource type="AudioStream" uid="uid://cnacyxuxwxuk6" path="res://assets/ocean-waves-250310.mp3" id="10_fm665"]
 [ext_resource type="Script" path="res://scenes/petroleiro.gd" id="10_q5wyc"]
 [ext_resource type="Texture2D" uid="uid://bagvfcccvqu8a" path="res://assets/images/backgrounds/pixil-frame-0.png" id="10_xi2lw"]
 [ext_resource type="Texture2D" uid="uid://bj5nanfyhfehw" path="res://assets/images/backgrounds/pixil-frame-1.png" id="11_4ms74"]
@@ -641,6 +642,11 @@ motion_mirroring = Vector2(1728, 0)
 position = Vector2(816, 128)
 scale = Vector2(3, 2.101)
 texture = ExtResource("8_dwijc")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="CanvasLayer"]
+stream = ExtResource("10_fm665")
+volume_db = 6.172
+autoplay = true
 
 [node name="petroleiro" type="StaticBody2D" parent="."]
 position = Vector2(-768, -208)
