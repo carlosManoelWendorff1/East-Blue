@@ -1,78 +1,68 @@
 extends CharacterBody2D
 
-var SPEED = 400.0
-var speed_down = 200.0
-var has_fish = false
-var fish = null
-var max_weight = 0.0
-var curr_weight = 0.0
-var rope = null
-var rope_lim = 0.0
-var weight_test = null
-var fish_count_text = null
+var hook_speed = 200.0
+var fish_in_hook = null
+var max_capacity = (PlayerVariables.capacity_level + 1) * 30
+var rope_lim = (PlayerVariables.wire_level + 1) * 1500
+var used_capacity = 0.0
+
+@onready var rope = $"../Rope"
+@onready var weight_test = $"Camera2D/Weight"
+@onready var fish_count_text = $"Camera2D/Worth"
 @onready var popup = $"Camera2D/Popup"
 
-func format_weight(value: String) -> String:
+func format_capacity(value: String) -> String:
 	return "Weight: " + value + "%"
 
-func format_fish_count(value: String) -> String:
+func format_worth(value: String) -> String:
 	return "Worth: " + value + "$"
-
-func _ready():
-	rope = $"../Rope"
-	weight_test = $"../Player/Camera2D/Weight"
-	fish_count_text = $"../Player/Camera2D/Worth"
-	rope_lim = (PlayerVariables.wire_level + 1) * 1500
-	max_weight = (PlayerVariables.capacity_level + 1) * 30
-	
 	
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("esc"):
 		end_fishing()
 		
 	var direction := Input.get_axis("ui_up", "ui_down")
+	
 	if direction:
 		if direction == 1 && position.y < rope_lim:
-			velocity.y = direction * speed_down
+			velocity.y = direction * hook_speed
 		elif direction == -1 && position.y > 421:
-			velocity.y = direction * SPEED
-			
+			velocity.y = direction * hook_speed * 2
 		else:
 			velocity.y = 0
 	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+		velocity.y = move_toward(velocity.y, 0, hook_speed * 2)
 		
 	rope.size.y = self.position.y - rope.position.y - (self.get_child(0).texture.get_size().y/2);
 	
 	if position.y < 422:
-		remove_fish()
-		
-		if curr_weight > max_weight:
-			end_fishing()		
+		remove_fish()	
 	move_and_slide()
 	
 func end_fishing():
-	PlayerVariables.coins += curr_weight * 1.5
+	PlayerVariables.coins += get_weight_price(used_capacity)
 	get_tree().change_scene_to_file("res://scenes/boat.tscn")	
 	
 func add_fish(curr_fish: Node2D):
-	if not has_fish:
-		if curr_fish.weight + curr_weight > max_weight:
+	if fish_in_hook == null:
+		if curr_fish.weight + used_capacity > max_capacity:
 			popup.new("Too Heavy!")
 			return
 		curr_fish.player = self
 		curr_fish.caught = true
 		curr_fish.velocity.x = 0.0
-		has_fish = true
-		fish = curr_fish
+		fish_in_hook = curr_fish
 		
 func remove_fish():
-	if has_fish:
-		var fish_value = fish.weight * 1.5
+	if fish_in_hook != null:
+		var fish_value = get_weight_price(fish_in_hook.weight)
 		popup.new("+"+str(fish_value).pad_decimals(0)+"$")
-		has_fish = false
-		curr_weight += fish.weight
-		weight_test.text = format_weight(str((curr_weight / max_weight) * 100).pad_decimals(2))
-		fish_count_text.text = format_fish_count(str(curr_weight * 1.5).pad_decimals(0))
-		fish.queue_free()
-		fish = null
+		used_capacity += fish_in_hook.weight
+		weight_test.text = format_capacity(str((used_capacity / max_capacity) * 100).pad_decimals(2))
+		fish_count_text.text = format_worth(str(get_weight_price(used_capacity)).pad_decimals(0))
+		fish_in_hook.queue_free()
+		fish_in_hook = null
+
+func get_weight_price(weight: float) -> float:
+	return weight * 1.5
+	
