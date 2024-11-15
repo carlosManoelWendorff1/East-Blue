@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck4mq02ywx3bh"]
+[gd_scene load_steps=8 format=3 uid="uid://ck4mq02ywx3bh"]
 
 [ext_resource type="Texture2D" uid="uid://d0afm0n8dmaw2" path="res://assets/images/GUI.png" id="1_0plvx"]
 [ext_resource type="Theme" uid="uid://0w0htlpdksdc" path="res://themes/theme_button.tres" id="1_7fngm"]
 [ext_resource type="Script" path="res://scenes/menu.gd" id="1_25k53"]
 [ext_resource type="Texture2D" uid="uid://cub6jhsbk5li2" path="res://assets/images/backgrounds/far.png" id="3_aqx4t"]
 [ext_resource type="Texture2D" uid="uid://dqicefsed5lao" path="res://assets/images/backgrounds/foregound-merged.png" id="5_4cn0f"]
+[ext_resource type="AudioStream" uid="uid://irwqn33yf6yw" path="res://assets/Under the Marquee [ ezmp3.cc ].mp3" id="6_vrexv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_nbbkf"]
 font_size = 100
@@ -96,6 +97,10 @@ motion_mirroring = Vector2(512, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
 texture = ExtResource("5_4cn0f")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_vrexv")
+autoplay = true
 
 [connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Start Game" to="." method="_on_start_game_button_down"]
 [connection signal="button_down" from="CanvasLayer/Control/VBoxContainer/Credits" to="." method="_on_credits_button_down"]

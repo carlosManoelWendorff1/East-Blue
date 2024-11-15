@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=30 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -18,6 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://v3j3dffltr1" path="res://assets/images/backgrounds/pixil-frame-2.png" id="12_aay4e"]
 [ext_resource type="Texture2D" uid="uid://bbolfeg80jwhm" path="res://assets/images/backgrounds/Night/Gemini_Generated_Image_3ic4vv3ic4vv3ic4.png" id="12_ejbex"]
 [ext_resource type="Script" path="res://scenes/boia_de_pesca.gd" id="12_p5i6g"]
+[ext_resource type="Theme" uid="uid://0w0htlpdksdc" path="res://themes/theme_button.tres" id="15_tvagw"]
 [ext_resource type="Texture2D" uid="uid://bpny33ibeyt5q" path="res://assets/Gemini_Generated_Image_8z1q5f8z1q5f8z1q.png" id="16_5hcph"]
 [ext_resource type="PackedScene" uid="uid://br4hjpvyx17rx" path="res://scenes/bottle/bottle3.tscn" id="18_v6fnf"]
 [ext_resource type="AudioStream" uid="uid://cu17vwfypbwnn" path="res://assets/boat-outboard-motor-01.wav" id="18_xvaw0"]
@@ -44,7 +45,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gttuq"]
-size = Vector2(1040, 468)
+size = Vector2(1105.43, 740.996)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
 size = Vector2(233.726, 231.91)
@@ -660,6 +661,26 @@ texture = ExtResource("16_5hcph")
 position = Vector2(-96, 226)
 shape = SubResource("RectangleShape2D_gttuq")
 
+[node name="RichTextLabel" type="RichTextLabel" parent="petroleiro"]
+offset_left = 295.0
+offset_top = 238.0
+offset_right = 381.0
+offset_bottom = 266.0
+theme = ExtResource("15_tvagw")
+text = "Space"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="petroleiro"]
+offset_left = -529.0
+offset_top = 236.0
+offset_right = -443.0
+offset_bottom = 264.0
+theme = ExtResource("15_tvagw")
+text = "Space"
+scroll_active = false
+shortcut_keys_enabled = false
+
 [node name="Boia de pesca" type="StaticBody2D" parent="."]
 position = Vector2(-1416, 200)
 script = ExtResource("12_p5i6g")
@@ -674,8 +695,18 @@ position = Vector2(25.5255, 433.481)
 scale = Vector2(0.785092, -2.27542)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boia de pesca/Sprite2D/Area2D"]
-position = Vector2(-96, 226)
+position = Vector2(0.00012207, 71.4398)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_gttuq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Boia de pesca"]
+offset_left = 2696.0
+offset_top = -143.0
+offset_right = 2778.0
+offset_bottom = -118.0
+theme = ExtResource("15_tvagw")
+text = "Space"
+scroll_active = false
 
 [node name="boat" type="CharacterBody2D" parent="."]
 position = Vector2(-16, 192)
