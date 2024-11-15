@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://c3fflikjl8mq8"]
+[gd_scene load_steps=12 format=3 uid="uid://c3fflikjl8mq8"]
 
 [ext_resource type="Texture2D" uid="uid://kk0affyode0t" path="res://assets/images/backgrounds/Night/Back.png" id="1_1jkvt"]
 [ext_resource type="Script" path="res://scripts/fishing.gd" id="1_fpicq"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://corkj4xxuw2o5" path="res://assets/images/barco_hull.png" id="3_rqfrf"]
 [ext_resource type="Texture2D" uid="uid://d0emgr20noo65" path="res://assets/images/anzol_asset.png" id="4_vf152"]
 [ext_resource type="FontFile" uid="uid://bavaw4erx7a6h" path="res://assets/fonts/MinimalPixel v2.ttf" id="6_fkow0"]
+[ext_resource type="PackedScene" uid="uid://tllu6ykkm4dj" path="res://scenes/popup.tscn" id="7_lcmh6"]
 [ext_resource type="AudioStream" uid="uid://rgvmauel0yf7" path="res://assets/Underwater Theme - New Super Mario Bros. Wii [ ezmp3.cc ].mp3" id="8_wkg3i"]
 [ext_resource type="AudioStream" uid="uid://2skg4xig7nw4" path="res://assets/Terraria Music - Underground [ ezmp3.cc ].mp3" id="9_ch7iu"]
 [ext_resource type="AudioStream" uid="uid://cc8ic35uavwhg" path="res://assets/Terraria Music - Underground Corruption [ ezmp3.cc ].mp3" id="10_eajy7"]
@@ -28,16 +29,12 @@ position = Vector2(730, 1870)
 scale = Vector2(12.7078, 21.3803)
 texture = ExtResource("1_1jkvt")
 
-[node name="Panel2" type="Panel" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D" type="Sprite2D" parent="Panel2"]
+[node name="Sprite2D2" type="Sprite2D" parent="sky"]
 position = Vector2(785, 3153)
 scale = Vector2(2.24419, 2.90479)
 texture = ExtResource("2_kmel3")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D3" type="Sprite2D" parent="sky"]
 position = Vector2(710, 341)
 scale = Vector2(1.93055, 1.91)
 texture = ExtResource("3_rqfrf")
@@ -57,6 +54,14 @@ shape = SubResource("RectangleShape2D_5wwka")
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-9, 21)
+
+[node name="Popup" parent="Player/Camera2D" instance=ExtResource("7_lcmh6")]
+z_index = 100
+z_as_relative = false
+offset_left = 45.0
+offset_top = -77.0
+offset_right = 45.0
+offset_bottom = -77.0
 
 [node name="Weight" type="RichTextLabel" parent="Player/Camera2D"]
 offset_left = -529.0
@@ -79,14 +84,14 @@ theme_override_font_sizes/normal_font_size = 40
 text = "Worth: 0$"
 
 [node name="exit" type="RichTextLabel" parent="Player/Camera2D"]
-offset_left = 136.0
-offset_top = 324.0
-offset_right = 607.0
-offset_bottom = 413.0
+offset_left = 55.0
+offset_top = 323.0
+offset_right = 560.0
+offset_bottom = 412.0
 theme_override_fonts/normal_font = ExtResource("6_fkow0")
 theme_override_font_sizes/bold_italics_font_size = 40
 theme_override_font_sizes/normal_font_size = 30
-text = "Pess ESC to sell all fishes"
+text = "Press ESC to sell all the fishes"
 
 [node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
 position = Vector2(-1104, 2516)
@@ -105,13 +110,88 @@ position = Vector2(2864, 43.2795)
 shape = SubResource("RectangleShape2D_grgqi")
 
 [node name="Fish2" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1081, 1720)
+position = Vector2(-877, 1816)
 
 [node name="Fish3" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1159, 1094)
+position = Vector2(719, 1456)
 
 [node name="Fish" parent="." instance=ExtResource("3_ong5k")]
-position = Vector2(-1015, 2283)
+position = Vector2(-676, 2419)
+
+[node name="Fish7" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(252, 2764)
+
+[node name="Fish8" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1463, 2984)
+
+[node name="Fish9" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-806, 3460)
+
+[node name="Fish10" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1915, 4478)
+
+[node name="Fish12" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-495, 4829)
+
+[node name="Fish13" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-444, 4252)
+
+[node name="Fish14" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1451, 5564)
+
+[node name="Fish11" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(665, 3958)
+
+[node name="Fish4" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1689, 2151)
+
+[node name="Fish15" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-682, 2861)
+
+[node name="Fish16" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(914, 2501)
+
+[node name="Fish17" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-481, 3464)
+
+[node name="Fish18" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(447, 3809)
+
+[node name="Fish19" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1658, 4029)
+
+[node name="Fish20" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-611, 4505)
+
+[node name="Fish21" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(2110, 5523)
+
+[node name="Fish22" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-85, 5512)
+
+[node name="Fish23" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-249, 5297)
+
+[node name="Fish24" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1193, 4527)
+
+[node name="Fish25" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(860, 5003)
+
+[node name="Fish26" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1884, 3196)
+
+[node name="Fish27" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(2127, 2345)
+
+[node name="Fish28" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(130, 2048)
+
+[node name="Fish5" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(1932, 1300)
+
+[node name="Fish6" parent="." instance=ExtResource("3_ong5k")]
+position = Vector2(-65, 1003)
 
 [node name="Rope" type="ColorRect" parent="."]
 offset_left = 536.0
