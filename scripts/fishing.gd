@@ -8,7 +8,7 @@ var fish_count = 0
 var max_weight = 100.0
 var curr_weight = 0.0
 var rope = null
-var rope_lim = 2000
+var rope_lim = 5800
 var weight_test = null
 
 func format_weight(value: String) -> String:
@@ -21,6 +21,7 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("ui_up", "ui_down")
+	print(position.y)
 	if direction:
 		if direction == 1 && position.y < rope_lim:
 			velocity.y = direction * speed_down
@@ -37,7 +38,8 @@ func _physics_process(delta: float) -> void:
 	if position.y < 422 && has_fish:
 		has_fish = false
 		fish.queue_free()
-		weight_test.text = format_weight(str(fish.weight).pad_decimals(2))
+		curr_weight += fish.weight
+		weight_test.text = format_weight(str((curr_weight / max_weight) * 100).pad_decimals(2))
 		fish = null
 		fish_count += 1;
 		
