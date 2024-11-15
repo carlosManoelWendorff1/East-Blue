@@ -41,11 +41,18 @@ func reset_capacity() -> void:
 func upgrade_wire() -> void:
 	if wire_level < 3:
 		wire_level += 1
+		check_end()
 	
 func upgrade_speed() -> void:
 	if speed_level < 3:
 		speed_level += 1
+		check_end()
 	
 func upgrade_capacity() -> void:
 	if capacity_level < 3:
 		capacity_level += 1
+		check_end()
+		
+func check_end():
+	if capacity_level == 3 && speed_level == 3 && wire_level == 3:
+		get_tree().change_scene_to_file("res://scenes/end.tscn")
