@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://15lvoapd3ndd"]
+[gd_scene load_steps=29 format=3 uid="uid://15lvoapd3ndd"]
 
 [ext_resource type="Script" path="res://scripts/boat.gd" id="1_xkc0s"]
 [ext_resource type="Texture2D" uid="uid://bexb4twtr5omy" path="res://assets/images/barco_asset.png" id="2_j470a"]
@@ -47,6 +47,9 @@ size = Vector2(1040, 468)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_raihm"]
 size = Vector2(233.726, 231.91)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63new"]
+size = Vector2(86.25, 146.745)
 
 [node name="Node2D" type="Node2D"]
 
@@ -746,3 +749,19 @@ scale = Vector2(-6.06033, 6.20477)
 position = Vector2(-3248, 216)
 rotation = 3.14159
 scale = Vector2(6.06033, -6.20477)
+
+[node name="Border Wall" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(-1104, 2516)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall"]
+position = Vector2(-2494, -57.764)
+shape = SubResource("RectangleShape2D_63new")
+
+[node name="Border Wall2" type="StaticBody2D" parent="." groups=["wall"]]
+position = Vector2(-1104, 2516)
+scale = Vector2(1, 40.25)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Border Wall2"]
+position = Vector2(4058, -67.7019)
+shape = SubResource("RectangleShape2D_63new")
